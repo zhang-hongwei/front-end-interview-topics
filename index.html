@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <style>
+            .box {
+                height: 1000px;
+                background: rgb(95, 78, 78);
+                margin-bottom: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#id1">1</a>
+        <a href="#id2">2</a>
+        <a href="#id3">3</a>
+        <a href="#id4">4</a>
+
+        <button id="preBtn">前近</button>
+        <button id="nextBtn">后退</button>
+
+        <div id="id1" class="box">111111</div>
+        <div id="id2" class="box">222222</div>
+        <div id="id3" class="box">333333</div>
+        <div id="id4" class="box">444444</div>
+        <script>
+            console.log('====>history', history);
+
+            preBtn.onclick = function() {
+                history.go(-1);
+            };
+
+            window.addEventListener('hashchange', function(event) {
+                console.log(event);
+            });
+
+            window.addEventListener('popstate', function(event) {
+                console.log(event);
+            });
+        </script>
+    </body>
+</html>
