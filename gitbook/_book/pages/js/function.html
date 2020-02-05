@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Object · GitBook</title>
+        <title>Function · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -73,10 +73,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="function.html" />
+    <link rel="next" href="types.html" />
     
     
-    <link rel="prev" href="history.html" />
+    <link rel="prev" href="object.html" />
     
 
     </head>
@@ -131,7 +131,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="object.html">
+        <li class="chapter " data-level="1.3" data-path="object.html">
             
                 <a href="object.html">
             
@@ -144,7 +144,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="function.html">
+        <li class="chapter active" data-level="1.4" data-path="function.html">
             
                 <a href="function.html">
             
@@ -200,7 +200,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Object</a>
+        <a href="../.." >Function</a>
     </h1>
 </div>
 
@@ -215,35 +215,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="object">Object</h1>
-<h2 id="&#x6D45;&#x62F7;&#x8D1D;">&#x6D45;&#x62F7;&#x8D1D;</h2>
+                                <h1 id="function">Function</h1>
+<h2 id="1-&#x6784;&#x9020;&#x51FD;&#x6570;">1. &#x6784;&#x9020;&#x51FD;&#x6570;</h2>
+<h3 id="new-&#x64CD;&#x4F5C;&#x7B26;">new &#x64CD;&#x4F5C;&#x7B26;</h3>
 <ol>
-<li>Object.assign</li>
-<li>&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;</li>
-<li>Array.prototype.slice</li>
-<li>Array.prototype.concat</li>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;</li>
+<li>&#x5C06;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x8D4B;&#x7ED9;&#x65B0;&#x5BF9;&#x8C61;(&#x56E0;&#x6B64; this &#x5C31;&#x6307;&#x5411;&#x4E86;&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;)</li>
+<li>&#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EE3;&#x7801;(&#x4E3A;&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;)</li>
+<li>&#x8FD4;&#x56DE;&#x65B0;&#x5BF9;&#x8C61;</li>
 </ol>
-<h2 id="&#x5BF9;&#x8C61;&#x7684;&#x6DF1;&#x62F7;&#x8D1D;">&#x5BF9;&#x8C61;&#x7684;&#x6DF1;&#x62F7;&#x8D1D;</h2>
+<h2 id="2-&#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;">2. &#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;</h2>
 <ol>
-<li>&#x62F7;&#x8D1D;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x4E2D;&#x5982;&#x679C;&#x6709;&#x51FD;&#x6570;,undefined,symbol &#x5219;&#x7ECF;&#x8FC7; JSON.stringify()&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684; JSON &#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x8FD9;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x4F1A;&#x6D88;&#x5931;</li>
-<li>&#x65E0;&#x6CD5;&#x62F7;&#x8D1D;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x65E0;&#x6CD5;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;</li>
-<li>&#x62F7;&#x8D1D; Date &#x5F15;&#x7528;&#x7C7B;&#x578B;&#x4F1A;&#x53D8;&#x6210;&#x5B57;&#x7B26;&#x4E32;</li>
-<li>&#x62F7;&#x8D1D; RegExp &#x5F15;&#x7528;&#x7C7B;&#x578B;&#x4F1A;&#x53D8;&#x6210;&#x7A7A;&#x5BF9;&#x8C61;</li>
-<li>&#x5BF9;&#x8C61;&#x4E2D;&#x542B;&#x6709; NaN&#x3001;Infinity &#x548C;-Infinity&#xFF0C;&#x5219;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x7ED3;&#x679C;&#x4F1A;&#x53D8;&#x6210; null</li>
-<li>&#x65E0;&#x6CD5;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x7684;&#x5FAA;&#x73AF;&#x5E94;&#x7528;(&#x5373; obj[key] = obj)</li>
+<li>&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5DF2;&#x7ECF;&#x8BBE;&#x7F6E;&#x597D;&#x4E86;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;</li>
+<li>&#x8C03;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E76;&#x4E3A;&#x5B83;&#x4F20;&#x5165;&#x8981;&#x67EF;&#x91CC;&#x5316;&#x7684;&#x51FD;&#x6570;&#x548C;&#x5FC5;&#x8981;&#x53C2;&#x6570;</li>
 </ol>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepClone</span>(<span class="hljs-params">obj</span>) </span>{
-    <span class="hljs-keyword">let</span> cloneObj = {}; <span class="hljs-comment">//&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span>
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> obj) {
-        <span class="hljs-comment">//&#x904D;&#x5386;&#x53C2;&#x6570;&#x7684;&#x952E;</span>
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> obj[key] === <span class="hljs-string">&apos;object&apos;</span>) {
-            cloneObj[key] = deepClone(obj[key]); <span class="hljs-comment">//&#x503C;&#x662F;&#x5BF9;&#x8C61;&#x5C31;&#x518D;&#x6B21;&#x8C03;&#x7528;&#x51FD;&#x6570;</span>
-        } <span class="hljs-keyword">else</span> {
-            cloneObj[key] = obj[key]; <span class="hljs-comment">//&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x503C;</span>
-        }
-    }
-    <span class="hljs-keyword">return</span> cloneObj;
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curry</span>(<span class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">let</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> innerArgs = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>);
+        <span class="hljs-keyword">let</span> finalArgs = args.concat(innerArgs);
+        <span class="hljs-keyword">return</span> fn.apply(<span class="hljs-literal">null</span>, finalArgs);
+    };
 }
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">num1, num2</span>) </span>{
+    <span class="hljs-keyword">return</span> num1 + num2;
+}
+
+<span class="hljs-keyword">let</span> curriedAdd = curry(add, <span class="hljs-number">5</span>);
+
+<span class="hljs-built_in">console</span>.log(curriedAdd(<span class="hljs-number">3</span>));
 </code></pre>
 
                                 
@@ -272,12 +273,12 @@
 
             
                 
-                <a href="history.html" class="navigation navigation-prev " aria-label="Previous page: History">
+                <a href="object.html" class="navigation navigation-prev " aria-label="Previous page: Object">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="function.html" class="navigation navigation-next " aria-label="Next page: Function">
+                <a href="types.html" class="navigation navigation-next " aria-label="Next page: Types">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -288,7 +289,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Object","level":"1.3","depth":1,"next":{"title":"Function","level":"1.4","depth":1,"path":"pages/js/function.md","ref":"./pages/js/function.md","articles":[]},"previous":{"title":"History","level":"1.2","depth":1,"path":"pages/js/history.md","ref":"./pages/js/history.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","code","splitter"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/js/object.md","mtime":"2020-02-04T07:43:56.834Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-02-05T11:24:50.411Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Function","level":"1.4","depth":1,"next":{"title":"Types","level":"1.5","depth":1,"path":"pages/js/types.md","ref":"./pages/js/types.md","articles":[]},"previous":{"title":"Object","level":"1.3","depth":1,"path":"pages/js/object.md","ref":"./pages/js/object.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","code","splitter","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/js/function.md","mtime":"2020-02-05T05:10:30.059Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-02-05T12:42:03.499Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -311,6 +312,10 @@
     
         
         <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
