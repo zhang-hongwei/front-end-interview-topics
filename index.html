@@ -27,19 +27,24 @@
         <div id="id3" class="box">333333</div>
         <div id="id4" class="box">444444</div>
         <script>
-            console.log('====>history', history);
+            function Fn() {
+                this.a = 123;
+            }
 
-            preBtn.onclick = function() {
-                history.go(-1);
-            };
+            Fn.prototype = Fn1.prototype;
+            function Fn1() {
+                this.a = 123;
+            }
 
-            window.addEventListener('hashchange', function(event) {
-                console.log(event);
-            });
+            let a = new Fn();
 
-            window.addEventListener('popstate', function(event) {
-                console.log(event);
-            });
+            let a1 = new Fn1();
+
+            console.log("===>typeof", typeof a.constructor);
+            console.log("===>typeof", typeof a1.constructor);
+            console.log("===>typeof", [].constructor);
+            console.log("===>typeof", "fdsf".constructor);
+            console.log("===>typeof", .constructor);
         </script>
     </body>
 </html>

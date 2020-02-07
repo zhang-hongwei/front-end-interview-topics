@@ -45,8 +45,33 @@ null == undefined; // ==> true
 
 ### 3.2. instanceof
 
-instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链
+instanceof 运算符用于检测`构造函数`的 prototype 属性是否出现在某个实例对象的原型链
+
+```js
+object instanceof constructor;
+```
 
 ### 3.3. constructor
+
+```js
+console.log(bool.constructor === Boolean); // true
+console.log(num.constructor === Number); // true
+console.log(str.constructor === String); // true
+console.log(arr.constructor === Array); // true
+console.log(obj.constructor === Object); // true
+console.log(fun.constructor === Function); // true
+
+// undefined和null没有contructor属性
+// constructor不能判断undefined和null，并且使用它是不安全的，因为contructor的指向是可以改变的
+
+function Fn() {}
+
+Fn.prototype = new Array();
+
+var f = new Fn();
+
+console.log(f.constructor === Fn); // false
+console.log(f.constructor === Array); // true
+```
 
 ### 3.4. Object.prototype.toString.call
